@@ -1,0 +1,71 @@
+---
+title: "SawaniARM"
+output: html_document
+date: "2024-02-28"
+---
+---
+title: "Apriori with Aviz"
+output: html_document
+date: "2024-02-27"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(viridis)
+library(arules)
+library(TSP)
+library(data.table)
+library(arulesViz)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r}
+association <- read.transactions("C:/Users/prani/Downloads/final1.csv", rm.duplicates = FALSE, format = "basket", sep = ",", cols =1)
+genres
+```
+```{r}
+rules_d <- apriori(data = association, parameter = list(support = 0.07, confidence = 0.9, minlen = 2))
+```
+
+```{r}
+inspect(head(sort(rules_d, by = "support"),20))
+```
+
+```{r}
+inspect(head(sort(rules_d, by = "support"),15))
+```
+```{r}
+inspect(head(sort(rules_d, by = "lift"),15))
+```
+
+
+```{r}
+itemFrequencyPlot(genres, topN=20, type = "absolute")
+```
+
+
+```{r}
+SortedRulesG <- sort(rules_c, by="support", decreasing = TRUE)
+```
+
+```{r}
+subruleG <- head(sort(SortedRulesG, by="support"),20)
+```
+
+```{r}
+inspect(subruleG)
+```
+
+```{r}
+plot(subruleG, method = "graph", engine = "interactive")
+```
+
+```{r}
+plot(subruleG, method = "graph",engine="htmlwidget")
+```

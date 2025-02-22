@@ -32,7 +32,7 @@ The website is designed to provide an engaging and informative user experience. 
 
 ## Technologies Used
 
-- **Machine Learning & Data Analysis:** Python, scikit-learn, pandas, NumPy, and Matplotlib/Seaborn for visualization.
+- **Machine Learning & Data Analysis:** Python, R, scikit-learn, pandas, NumPy, and Matplotlib/Seaborn for visualization.
 - **Clustering & ARM Algorithms:** K-Means, Hierarchical Clustering, and the Apriori algorithm.
 - **Dimensionality Reduction:** Principal Component Analysis (PCA).
 - **Website:** Wix for design and content presentation.
